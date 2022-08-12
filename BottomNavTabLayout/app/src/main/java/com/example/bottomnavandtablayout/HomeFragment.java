@@ -15,7 +15,7 @@ public class HomeFragment extends Fragment {
 
     View view;
     EditText GetTeext;
-    Button SendButton;
+    Button SendButton,BottomSheet;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -33,6 +33,17 @@ public class HomeFragment extends Fragment {
 
         GetTeext= view.findViewById(R.id.ed_id);
         SendButton=view.findViewById(R.id.btn);
+        BottomSheet=view.findViewById(R.id.bs);
+
+
+        BottomSheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"Dekha Jak",Toast.LENGTH_SHORT).show();
+                BottomSheetFragment bottomSheetFragment=new BottomSheetFragment();
+                bottomSheetFragment.show(getParentFragmentManager(),bottomSheetFragment.getTag());
+            }
+        });
 
 
         SendButton.setOnClickListener(new View.OnClickListener() {
